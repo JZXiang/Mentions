@@ -8,20 +8,22 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.LinkMovementMethod;
-import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+
 import com.bobomee.android.mentionedittextdemo.edit.Tag;
 import com.bobomee.android.mentionedittextdemo.edit.TagList;
 import com.bobomee.android.mentionedittextdemo.edit.User;
 import com.bobomee.android.mentionedittextdemo.edit.UserList;
+import com.bobomee.android.mentionedittextdemo.text.parser.CustomParser;
 import com.bobomee.android.mentionedittextdemo.text.parser.Parser;
 import com.bobomee.android.mentions.edit.MentionEditText;
 import com.bobomee.android.mentions.text.MentionTextView;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void initViews() {
-    mCovertedString.setMovementMethod(new ScrollingMovementMethod());
+//    mCovertedString.setMovementMethod(new ScrollingMovementMethod());
     mMentiontextview.setMovementMethod(new LinkMovementMethod());
-    mMentiontextview.setParserConverter(mTagParser);
+    mMentiontextview.setParserConverter(new CustomParser());
 
     mMentiontextview.setText(str2);
   }

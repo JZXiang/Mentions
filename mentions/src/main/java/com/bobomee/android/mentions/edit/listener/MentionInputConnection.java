@@ -41,11 +41,12 @@ public class MentionInputConnection extends InputConnectionWrapper {
           return super.sendKeyEvent(event);
         } else {
           //select the mention string
-          mEditText.setSelected(true);
+//          mEditText.setSelected(true);
           mRangeManager.setLastSelectedRange(closestRange);
           setSelection(closestRange.getTo(), closestRange.getFrom());
+          return super.sendKeyEvent(event);
         }
-        return true;
+//        return true;
       }
     }
     return super.sendKeyEvent(event);

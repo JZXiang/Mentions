@@ -42,7 +42,7 @@ public class MentionTextView extends TextView {
       text = mParserConverter.convert(text);
     }
 
-    text = wrapper(text);
+//    text = wrapper(text);
     super.setText(text, type);
   }
 

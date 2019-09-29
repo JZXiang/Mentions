@@ -10,7 +10,6 @@ import com.bobomee.android.mentions.model.FormatRange;
  * @since 2017/4/8 汪波 first commit
  */
 public interface InsertData {
-
   CharSequence charSequence();
 
   FormatRange.FormatData formatData();
