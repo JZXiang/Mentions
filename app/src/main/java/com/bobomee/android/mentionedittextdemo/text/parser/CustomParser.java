@@ -47,12 +47,12 @@ public class CustomParser implements ParserConverter {
             if (data == null) {
                 spannableStringBuilder.append(str);
             } else {
-                String username = "@"+ data.optString("name");
+                String username = "@" + data.optString("name") + User.Space;
                 SpannableString spannableString = new SpannableString(username);
                 spannableString.setSpan(new ClickableSpan() {
                     @Override
                     public void onClick(@NonNull View widget) {
-                        Log.e(TAG, "onClick: 111" );
+                        Log.e(TAG, "onClick: 111");
                         Log.e(TAG, "onClick: " + str);
                     }
 

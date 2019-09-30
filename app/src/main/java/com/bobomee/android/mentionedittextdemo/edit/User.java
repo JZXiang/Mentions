@@ -20,6 +20,7 @@ import java.io.Serializable;
  */
 public class User implements Serializable, InsertData {
     public static final String Separator = "&nbsp;";
+    public static final String Space = " ";
 
     private final CharSequence userId;
     private final CharSequence userName;
@@ -69,7 +70,7 @@ public class User implements Serializable, InsertData {
 
     @Override
     public CharSequence charSequence() {
-        return "@" + userName;
+        return "@" + userName + Space;
     }
 
     @Override
